@@ -1,0 +1,3 @@
+=================================this is my application:${application.title}===============
+my applicatioin version:${application.version}
+my spring boot version:${spring-boot.version}
