@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import com.joyner.spring.boot.hello.entity.MyBean;
+
 @SpringBootApplication
 public class Application {
 
@@ -20,6 +22,11 @@ public class Application {
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+    	
+    	
+    	MyBean my = ctx.getBean(MyBean.class);
+		System.out.println("看下属性值的覆盖问题：" + my.getName());
+
         return args -> {
         	System.out.println(args);
             System.out.println("Let's inspect the beans provided by Spring Boot:");
